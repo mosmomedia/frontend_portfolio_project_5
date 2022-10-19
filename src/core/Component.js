@@ -4,20 +4,29 @@ export default class Component {
 	constructor($target) {
 		this.$target = $target;
 		this.setup();
+		this.setEvent();
 		this.render();
 	}
 	setup() {}
+	mounted() {}
 	template() {
 		return '';
 	}
 	render() {
 		this.$target.innerHTML = this.template();
-		// this.setEvent();
+		this.mounted();
 	}
 
-	// setEvent() {}
-	// setState(newState) {
-	// 	this.$state = { ...this.$state, ...newState };
-	// 	this.render();
+	setEvent() {}
+	addEvent(eventType, selector, callback) {
+		this.$target.addEventListener(eventType, (event) => {
+			if (!event.target.closest(selector)) return false;
+			callback(event);
+		});
+	}
+
+	// setState (newState) {
+	//   this.$state = { ...this.$state, ...newState };
+	//   this.render();
 	// }
 }
