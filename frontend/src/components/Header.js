@@ -2,7 +2,8 @@ import Component from '../core/Component.js';
 
 export default class Header extends Component {
 	template() {
-		return `<nav>
+		return `
+		<nav>
 		<ul id="navigation">
 			<li>
 				<a href="/about">About</a>

@@ -28,8 +28,7 @@ export default class App extends Component {
 		});
 
 		window.addEventListener('popstate', () => {
-			console.log('[popstate]', window.location.pathname);
-			render();
+			this.render();
 		});
 	}
 
@@ -48,15 +47,25 @@ export default class App extends Component {
 		});
 	}
 
-	render = async (path) => {
+	render = (path) => {
 		const _path = path ?? window.location.pathname;
-		console.log(_path);
-
 		try {
-			const Component =
+			const component =
 				routes.find((route) => route.path === _path)?.component || NotFound;
 			const $main = this.$target.querySelector('main');
-			new Component($main);
+			const $navItem = this.$target.querySelectorAll('a');
+			$navItem.forEach((element) => {
+				const path = element.getAttribute('href');
+				if (path === _path) {
+					element.setAttribute('class', 'selectedNavItem');
+				} else {
+					if (element.className === 'selectedNavItem') {
+						element.removeAttribute('class');
+					}
+				}
+			});
+
+			new component($main);
 		} catch (err) {
 			console.error(err);
 		}
