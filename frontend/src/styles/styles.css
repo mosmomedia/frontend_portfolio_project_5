@@ -168,3 +168,48 @@ main {
 }
 
 /* @@ Feedback */
+
+/* form */
+
+#feedback-form h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	opacity: 0.95;
+}
+
+#feedback-rating {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2.5rem 0;
+}
+
+/* ${tw`relative bg-[#f4f4f4] w-8 h-8  text-center rounded-full text-base delay-100 hover:bg-keyColor hover:text-white sm:w-10 sm:h-10 md:w-14 md:h-14`} */
+
+#feedback-rating li {
+	position: relative;
+	background-color: #f4f4f4;
+	width: 3.5rem;
+	height: 3.5rem;
+	text-align: center;
+	border-radius: 50%;
+}
+
+#feedback-rating label {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 19px;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	font-size: 19px;
+}
+
+#feedback-rating input:checked ~ label {
+	background-color: #ff6a95;
+	color: #f4f4f4;
+}

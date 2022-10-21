@@ -1,8 +1,8 @@
 import Component from './core/Component.js';
 
 import Header from './components/Header.js';
-import About from './components/About.js';
-import Feedback from './components/Feedback.js';
+import About from './pages/About.js';
+import Feedback from './pages/Feedback.js';
 import NotFound from './components/NotFound.js';
 
 const routes = [
