@@ -13,7 +13,11 @@ export default class Feedback extends Component {
 		const { isLoading } = this.$state;
 
 		if (isLoading) {
-			return 'Loading ...';
+			return `
+			<div id='loadingSpinnerContainer'>
+				<div id='loadingSpinner'></div>
+			</div>
+			`;
 		} else {
 			return `
 		<div id='feedback'>
