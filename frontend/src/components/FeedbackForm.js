@@ -6,7 +6,7 @@ export default class FeedbackForm extends Component {
 		this.$state = {
 			rating: 10,
 			text: '',
-			message: '',
+			isDisabled: true,
 		};
 	}
 
@@ -14,10 +14,11 @@ export default class FeedbackForm extends Component {
 		return `
 				<h2>How would you rate your service with us?</h2>
 				<ul id='feedback-rating'></ul>
-				<div>
-					<input type="text" id="input-review"required placeholder='리뷰를 남겨주세요.' />
-					<button type='submit'>등록하기</button>
+				<div id='feedback-submit'>
+					<input type="text" id="input-text"required placeholder='리뷰를 남겨주세요.' />
+					<button id='feedback-btn' class='diabledBtn' type='submit' disabled>등록하기</button>
 				</div>
+				<div id='feedback-message'></div>
 		`;
 	}
 
@@ -32,18 +33,38 @@ export default class FeedbackForm extends Component {
 
 	getRating() {
 		const { rating } = this.$state;
-
 		return rating;
 	}
 
 	setEvent() {
-		this.addEvent('keyup', '#input-review', ({ target: { value } }) => {
-			this.setState({ text: value });
+		this.addEvent('keyup', '#input-text', ({ target: { value } }) => {
+			const $feedbackSubmitBtn = this.$target.querySelector('#feedback-btn');
+			const $feedbackMsg = this.$target.querySelector('#feedback-message');
+			if (value === '') {
+				this.setState({ isDisabled: true }, 'stopRender');
+				$feedbackSubmitBtn.setAttribute('class', 'diabledBtn');
+				$feedbackSubmitBtn.setAttribute('disabled', 'true');
+				$feedbackMsg.innerText = '';
+			} else if (value.length < 2) {
+				this.setState({ isDisabled: true }, 'stopRender');
+				$feedbackSubmitBtn.setAttribute('class', 'diabledBtn');
+				$feedbackSubmitBtn.setAttribute('disabled', 'true');
+				$feedbackMsg.innerText = '최소 10자 이상을 입력하세요.';
+			} else {
+				this.setState({ isDisabled: false }, 'stopRender');
+				$feedbackSubmitBtn.removeAttribute('class');
+				$feedbackSubmitBtn.removeAttribute('disabled');
+				$feedbackMsg.innerText = '';
+			}
+			this.setState({ text: value }, 'stopRender');
 		});
 
 		this.addEvent('click', 'button', (e) => {
 			e.preventDefault();
-			console.log(this.$state);
+			const { rating, text, isDisabled } = this.$state;
+			if (rating && text && !isDisabled) {
+				console.log(rating, text, isDisabled);
+			}
 		});
 	}
 }

@@ -24,8 +24,7 @@ export default class FeedbackRating extends Component {
 	setEvent() {
 		this.addEvent('change', 'input[type=radio]', ({ target: { value } }) => {
 			const { setState } = this.$props;
-			setState({ rating: +value });
-			this.render();
+			setState({ rating: +value }, 'targetRender', this);
 		});
 	}
 }

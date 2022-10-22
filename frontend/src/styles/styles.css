@@ -185,8 +185,6 @@ main {
 	margin: 2.5rem 0;
 }
 
-/* ${tw`relative bg-[#f4f4f4] w-8 h-8  text-center rounded-full text-base delay-100 hover:bg-keyColor hover:text-white sm:w-10 sm:h-10 md:w-14 md:h-14`} */
-
 #feedback-rating li {
 	position: relative;
 	background-color: #f4f4f4;
@@ -212,4 +210,41 @@ main {
 #feedback-rating input:checked ~ label {
 	background-color: #ff6a95;
 	color: #f4f4f4;
+}
+
+#feedback-submit {
+	display: flex;
+	border: solid 1px #ccc;
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.625rem;
+}
+
+#feedback-submit #input-text {
+	display: flex;
+	flex-grow: 1;
+}
+
+#input-text::placeholder {
+	color: #6f6f6f;
+}
+
+#feedback-submit button {
+	font-size: 14px;
+	padding: 0.9rem 1.25rem 0.7rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	background-color: #202142;
+	color: #fff;
+}
+
+#feedback-submit button.diabledBtn {
+	background-color: #444;
+	color: #ccc;
+}
+/* ${tw`pt-2 text-lg text-center text-purple-800`} */
+
+#feedback-message {
+	padding-top: 1.25rem;
+	text-align: center;
+	color: rgba(91, 33, 182, 0.8);
 }

@@ -14,9 +14,14 @@ export default class Component {
 	template() {
 		return '';
 	}
-	render() {
-		this.$target.innerHTML = this.template();
-		this.mounted();
+	render(type, target) {
+		if (type === 'replaceWith') {
+		} else if (type === 'targetRender') {
+			target.render();
+		} else {
+			this.$target.innerHTML = this.template();
+			this.mounted();
+		}
 	}
 
 	setEvent() {}
@@ -27,8 +32,10 @@ export default class Component {
 		});
 	}
 
-	setState(newState) {
+	setState(newState, type, target) {
 		this.$state = { ...this.$state, ...newState };
-		// this.render();
+		if (type !== 'stopRender') {
+			this.render(type, target);
+		}
 	}
 }
