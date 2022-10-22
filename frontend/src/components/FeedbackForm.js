@@ -61,14 +61,16 @@ export default class FeedbackForm extends Component {
 		});
 
 		// submit
-		this.addEvent('click', 'button', (e) => {
+		this.addEvent('click', 'button', async (e) => {
 			e.preventDefault();
 			const { rating, text, isDisabled } = this.$state;
 			if (rating && text && !isDisabled) {
-				const { handleLoadingState } = this.$props;
-				handleLoadingState(true);
-				console.log(rating, text, isDisabled);
-				setTimeout(() => handleLoadingState(false), 1000);
+				const { handleLoadingState, createFeedback } = this.$props;
+				// handleLoadingState(true);
+				const formData = { rating, text };
+				await createFeedback(formData);
+
+				// setTimeout(() => handleLoadingState(false), 1000);
 			}
 		});
 	}

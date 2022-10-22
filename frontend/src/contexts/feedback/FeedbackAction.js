@@ -9,3 +9,13 @@ export const getAllFeedbacks = async () => {
 		console.log(error);
 	}
 };
+
+// create a feedback
+export const postFeedback = async (formData) => {
+	try {
+		const res = await axios.post(API_URL, formData);
+		return res.data;
+	} catch (error) {
+		console.log(error);
+	}
+};

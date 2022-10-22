@@ -1,11 +1,14 @@
 import Component from '../core/Component.js';
+
 import FeedbackForm from '../components/FeedbackForm.js';
 import FeedbackStats from '../components/FeedbackStats.js';
 import FeedbackList from '../components/FeedbackList.js';
-
 import Spinner from '../components/shared/Spinner.js';
 
-import { getAllFeedbacks } from '../contexts/feedback/FeedbackAction.js';
+import {
+	getAllFeedbacks,
+	postFeedback,
+} from '../contexts/feedback/FeedbackAction.js';
 
 export default class Feedback extends Component {
 	setup() {
@@ -38,6 +41,7 @@ export default class Feedback extends Component {
 			getLoadingState,
 			getFeedbackList,
 			fetchAllFeedback,
+			createFeedback,
 		} = this;
 
 		if (isLoading) {
@@ -50,6 +54,7 @@ export default class Feedback extends Component {
 
 			new FeedbackForm($feedbackForm, {
 				handleLoadingState: handleLoadingState.bind(this),
+				createFeedback: createFeedback.bind(this),
 			});
 			new FeedbackStats($feedbackStats);
 			new FeedbackList($feedbackList, {
@@ -80,5 +85,18 @@ export default class Feedback extends Component {
 			'targetRender',
 			target
 		);
+	}
+
+	async createFeedback(formData) {
+		this.handleLoadingState(true);
+
+		const { feedbackList } = this.$state;
+		const newFeedback = await postFeedback(formData);
+
+		const payload = [newFeedback, ...feedbackList];
+		this.setState({
+			feedbackList: payload,
+			isLoading: false,
+		});
 	}
 }

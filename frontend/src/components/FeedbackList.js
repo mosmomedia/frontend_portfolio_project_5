@@ -6,6 +6,7 @@ export default class FeedbackList extends Component {
 		this.$state = {
 			isLoading: true,
 		};
+
 		const { fetchAllFeedback } = this.$props;
 		// get feedbacks list from db
 		fetchAllFeedback(this);

@@ -16,15 +16,11 @@ export const getAllfeedbacks = async (req, res) => {
 //@ Private
 
 export const postFeedback = async (req, res) => {
-	const { rating, text, name } = req.body;
-	// const { name } = req.user;
-
-	const feedback = await Feedback.create({
+	const { rating, text } = req.body;
+	const newFeedback = await Feedback.create({
 		rating,
 		text,
-		userName: name,
-		// userRef: uid,
 	});
 
-	res.status(200).json(feedback);
+	res.status(200).json(newFeedback);
 };
