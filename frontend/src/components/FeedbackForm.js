@@ -37,6 +37,7 @@ export default class FeedbackForm extends Component {
 	}
 
 	setEvent() {
+		// input text
 		this.addEvent('keyup', '#input-text', ({ target: { value } }) => {
 			const $feedbackSubmitBtn = this.$target.querySelector('#feedback-btn');
 			const $feedbackMsg = this.$target.querySelector('#feedback-message');
@@ -59,11 +60,15 @@ export default class FeedbackForm extends Component {
 			this.setState({ text: value }, 'stopRender');
 		});
 
+		// submit
 		this.addEvent('click', 'button', (e) => {
 			e.preventDefault();
 			const { rating, text, isDisabled } = this.$state;
 			if (rating && text && !isDisabled) {
+				const { setState } = this.$props;
+				setState({ isLoading: true });
 				console.log(rating, text, isDisabled);
+				setTimeout(() => setState({ isLoading: false }), 1000);
 			}
 		});
 	}
