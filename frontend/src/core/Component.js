@@ -15,8 +15,7 @@ export default class Component {
 		return '';
 	}
 	render(type, target) {
-		if (type === 'replaceWith') {
-		} else if (type === 'targetRender') {
+		if (type === 'targetRender') {
 			target.render();
 		} else {
 			this.$target.innerHTML = this.template();

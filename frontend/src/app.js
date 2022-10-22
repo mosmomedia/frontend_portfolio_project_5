@@ -3,7 +3,7 @@ import Component from './core/Component.js';
 import Header from './components/Header.js';
 import About from './pages/About.js';
 import Feedback from './pages/Feedback.js';
-import NotFound from './components/NotFound.js';
+import NotFound from './components/shared/NotFound.js';
 
 const routes = [
 	{ path: '/', component: Feedback },

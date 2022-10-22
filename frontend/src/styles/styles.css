@@ -173,7 +173,7 @@ nav {
 main {
 	margin: 4rem auto 0;
 	max-width: 64rem;
-	padding: 4rem 4rem 0;
+	padding: 2rem 4rem 0;
 	color: #333;
 }
 
@@ -274,10 +274,46 @@ main {
 	background-color: #444;
 	color: #ccc;
 }
-/* ${tw`pt-2 text-lg text-center text-purple-800`} */
 
 #feedback-message {
 	padding-top: 1.25rem;
 	text-align: center;
 	color: rgba(91, 33, 182, 0.8);
+}
+
+/* <div tw="mx-auto w-[95%] max-w-3xl relative bg-white text-[#333] rounded-xl py-8 px-10 my-5 "> */
+
+/* feedback list */
+
+.feedback-item-card {
+	position: relative;
+	background-color: #fff;
+	color: #333;
+	border-radius: 4px;
+	padding: 2rem 2.5rem;
+	margin: 1.25rem auto;
+	width: 95%;
+}
+
+.feedback-rating {
+	position: absolute;
+	top: -0.75rem /** -12px */;
+	left: -1.25rem /** -20px */;
+	background-color: #ff6a95;
+	color: #fff;
+	width: 3rem;
+	height: 3rem;
+	padding: 0.8rem;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 50%;
+	border: solid 1px #eee;
+}
+
+/* ${tw`text-xl text-gray-900 ml-2`} */
+
+.feedback-text {
+	font-size: 18px;
+	color: rgba(17, 24, 39, 0.9);
+	margin-left: 0.5rem;
 }

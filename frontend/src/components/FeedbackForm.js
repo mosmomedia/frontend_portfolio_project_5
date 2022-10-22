@@ -65,10 +65,10 @@ export default class FeedbackForm extends Component {
 			e.preventDefault();
 			const { rating, text, isDisabled } = this.$state;
 			if (rating && text && !isDisabled) {
-				const { setState } = this.$props;
-				setState({ isLoading: true });
+				const { handleLoadingState } = this.$props;
+				handleLoadingState(true);
 				console.log(rating, text, isDisabled);
-				setTimeout(() => setState({ isLoading: false }), 1000);
+				setTimeout(() => handleLoadingState(false), 1000);
 			}
 		});
 	}
