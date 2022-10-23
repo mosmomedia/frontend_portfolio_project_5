@@ -281,10 +281,20 @@ main {
 	color: rgba(91, 33, 182, 0.8);
 }
 
-/* <div tw="mx-auto w-[95%] max-w-3xl relative bg-white text-[#333] rounded-xl py-8 px-10 my-5 "> */
+/*@@ feedback list */
 
-/* feedback list */
+/* feedback stats */
+#feedback-stats {
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem auto 2rem;
+	width: 95%;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+}
 
+/* feedback items */
 .feedback-item-card {
 	position: relative;
 	background-color: #fff;
@@ -309,8 +319,6 @@ main {
 	border-radius: 50%;
 	border: solid 1px #eee;
 }
-
-/* ${tw`text-xl text-gray-900 ml-2`} */
 
 .feedback-text {
 	font-size: 18px;

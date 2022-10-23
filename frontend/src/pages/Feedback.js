@@ -1,7 +1,6 @@
 import Component from '../core/Component.js';
 
 import FeedbackForm from '../components/FeedbackForm.js';
-import FeedbackStats from '../components/FeedbackStats.js';
 import FeedbackList from '../components/FeedbackList.js';
 import Spinner from '../components/shared/Spinner.js';
 
@@ -29,8 +28,7 @@ export default class Feedback extends Component {
 		return `
 		<div id='feedback'>
 			<form id='feedback-form' class='card-header'></form>
-			<div id='feedback-stats'></div>
-			<ul id='feedback-list'></ul>
+			<div id='feedback-list'></div>
 		</div>`;
 	}
 
@@ -49,14 +47,13 @@ export default class Feedback extends Component {
 			new Spinner($spinner);
 		} else {
 			const $feedbackForm = this.$target.querySelector('#feedback-form');
-			const $feedbackStats = this.$target.querySelector('#feedback-stats');
 			const $feedbackList = this.$target.querySelector('#feedback-list');
 
 			new FeedbackForm($feedbackForm, {
 				handleLoadingState: handleLoadingState.bind(this),
 				createFeedback: createFeedback.bind(this),
 			});
-			new FeedbackStats($feedbackStats);
+
 			new FeedbackList($feedbackList, {
 				getFeedbackList: getFeedbackList.bind(this),
 				getLoadingState: getLoadingState.bind(this),
@@ -80,11 +77,14 @@ export default class Feedback extends Component {
 	async fetchAllFeedback(target) {
 		this.setState({ isLoading: true }, 'stopRender');
 		const payload = await getAllFeedbacks();
-		this.setState(
-			{ feedbackList: payload, isLoading: false },
-			'targetRender',
-			target
-		);
+
+		setTimeout(() => {
+			this.setState(
+				{ feedbackList: payload.reverse(), isLoading: false },
+				'targetRender',
+				target
+			);
+		}, 100);
 	}
 
 	async createFeedback(formData) {
