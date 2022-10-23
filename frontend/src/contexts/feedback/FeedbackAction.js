@@ -19,3 +19,15 @@ export const postFeedback = async (formData) => {
 		console.log(error);
 	}
 };
+
+//  delete a feedback
+export const deleteFeedback = async (id) => {
+	try {
+		if (window.confirm('Are you sure?')) {
+			const res = await axios.delete(API_URL + id);
+			return res.data;
+		}
+	} catch (error) {
+		console.log(error);
+	}
+};

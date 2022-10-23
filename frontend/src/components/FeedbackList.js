@@ -39,7 +39,7 @@ export default class FeedbackList extends Component {
 	}
 
 	mounted() {
-		const { getLoadingState, getFeedbackList } = this.$props;
+		const { getLoadingState, getFeedbackList, removeFeedback } = this.$props;
 		const isLoading = getLoadingState();
 
 		if (isLoading) {
@@ -56,7 +56,10 @@ export default class FeedbackList extends Component {
 		if ($feedbackItems.length > 0) {
 			const feedbackList = getFeedbackList();
 			$feedbackItems.forEach((e) => {
-				new FeedbackItem(e, { ...feedbackList[e.dataset.id] });
+				new FeedbackItem(e, {
+					...feedbackList[e.dataset.id],
+					removeFeedback: removeFeedback,
+				});
 			});
 		}
 	}

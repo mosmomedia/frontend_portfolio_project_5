@@ -7,6 +7,7 @@ import Spinner from '../components/shared/Spinner.js';
 import {
 	getAllFeedbacks,
 	postFeedback,
+	deleteFeedback,
 } from '../contexts/feedback/FeedbackAction.js';
 
 export default class Feedback extends Component {
@@ -35,11 +36,11 @@ export default class Feedback extends Component {
 	mounted() {
 		const { isLoading } = this.$state;
 		const {
-			handleLoadingState,
 			getLoadingState,
 			getFeedbackList,
 			fetchAllFeedback,
 			createFeedback,
+			removeFeedback,
 		} = this;
 
 		if (isLoading) {
@@ -57,6 +58,7 @@ export default class Feedback extends Component {
 				getFeedbackList: getFeedbackList.bind(this),
 				getLoadingState: getLoadingState.bind(this),
 				fetchAllFeedback: fetchAllFeedback.bind(this),
+				removeFeedback: removeFeedback.bind(this),
 			});
 		}
 	}
@@ -93,9 +95,28 @@ export default class Feedback extends Component {
 		const newFeedback = await postFeedback(formData);
 
 		const payload = [newFeedback, ...feedbackList];
-		this.setState({
-			feedbackList: payload,
-			isLoading: false,
-		});
+
+		setTimeout(() => {
+			this.setState({
+				feedbackList: payload,
+				isLoading: false,
+			});
+		}, 200);
+	}
+
+	async removeFeedback(id) {
+		this.handleLoadingState(true);
+		const { success } = await deleteFeedback(id);
+		if (success) {
+			const { feedbackList } = this.$state;
+			const payload = feedbackList.filter((item) => item._id !== id);
+
+			setTimeout(() => {
+				this.setState({
+					feedbackList: payload,
+					isLoading: false,
+				});
+			}, 200);
+		}
 	}
 }

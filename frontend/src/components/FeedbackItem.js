@@ -22,8 +22,9 @@ export default class FeedbackItem extends Component {
 			console.log(rating, text);
 		});
 
-		this.addEvent('click', '.feedback-btn-delete', (e) => {
-			const { _id } = this.$props;
+		this.addEvent('click', '.feedback-btn-delete', async (e) => {
+			const { _id, removeFeedback } = this.$props;
+			await removeFeedback(_id);
 		});
 	}
 }

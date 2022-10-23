@@ -24,3 +24,22 @@ export const postFeedback = async (req, res) => {
 
 	res.status(200).json(newFeedback);
 };
+
+//@ Delete a feedback
+//@ DELTE /api/feedback
+//@ Private
+
+export const deleteFeedback = async (req, res) => {
+	const { id } = req.params;
+
+	const feedback = await Feedback.findById(id);
+
+	if (!feedback) {
+		res.status(404);
+		throw new Error('feedback not found');
+	}
+
+	await feedback.remove();
+
+	res.status(200).json({ success: true });
+};
