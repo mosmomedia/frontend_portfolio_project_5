@@ -50,7 +50,6 @@ export default class Feedback extends Component {
 			const $feedbackList = this.$target.querySelector('#feedback-list');
 
 			new FeedbackForm($feedbackForm, {
-				handleLoadingState: handleLoadingState.bind(this),
 				createFeedback: createFeedback.bind(this),
 			});
 

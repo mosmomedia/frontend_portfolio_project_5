@@ -1,6 +1,7 @@
 import Component from '../core/Component.js';
 
 import FeedbackStats from '../components/FeedbackStats.js';
+import FeedbackItem from '../components/FeedbackItem.js';
 
 import Spinner from './shared/Spinner.js';
 
@@ -15,28 +16,22 @@ export default class FeedbackList extends Component {
 		const { getFeedbackList, getLoadingState } = this.$props;
 		const isLoading = getLoadingState();
 		const feedbackList = getFeedbackList();
-		const avrg = Math.round(
-			feedbackList.reduce((acc, { rating }) => acc + rating, 0) /
-				feedbackList.length
-		);
 
 		if (isLoading)
 			return `
 				<div id='spinner'></div>
 		`;
 
-		if (feedbackList.length === 0) return `<div>No Feedback</div>`;
+		if (feedbackList.length === 0)
+			return `<div id='feedback-empty'>No Feedbacks Yet</div>`;
 
 		return `
 		<div id='feedback-stats'></div>
 		<ul>
 		${feedbackList
-			.map(({ rating, text, name }) => {
+			.map((_, idx) => {
 				return `
-				<li class='feedback-item-card'>
-					<div class='feedback-rating'>${rating}</div>
-					<p class='feedback-text'>${text}</p>
-				</li>`;
+				<li class='feedback-item-card' data-id=${idx}></li>`;
 			})
 			.join('')}
 		</ul>
@@ -55,6 +50,14 @@ export default class FeedbackList extends Component {
 		const $feedbackStats = this.$target.querySelector('#feedback-stats');
 		if ($feedbackStats) {
 			new FeedbackStats($feedbackStats, { feedbackList: getFeedbackList() });
+		}
+
+		const $feedbackItems = this.$target.querySelectorAll('.feedback-item-card');
+		if ($feedbackItems.length > 0) {
+			const feedbackList = getFeedbackList();
+			$feedbackItems.forEach((e) => {
+				new FeedbackItem(e, { ...feedbackList[e.dataset.id] });
+			});
 		}
 	}
 }
