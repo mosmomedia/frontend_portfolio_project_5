@@ -10,7 +10,7 @@ export default class Header extends Component {
 			</li>
 			<li><a href="/">Feedback</a></li>
 			<li>
-				<a href="/login">Login</a>
+				<a href="/sign-in">Login</a>
 			</li>
 		</ul>
 	</nav>`;

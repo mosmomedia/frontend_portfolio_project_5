@@ -38,6 +38,13 @@ export default class FeedbackForm extends Component {
 
 	setEvent() {
 		// input text
+		this.handleInputEvent();
+
+		// submit
+		this.handleSubmitEvent();
+	}
+
+	handleInputEvent() {
 		this.addEvent('keyup', '#input-text', ({ target: { value } }) => {
 			const $feedbackSubmitBtn = this.$target.querySelector('#feedback-btn');
 			const $feedbackMsg = this.$target.querySelector('#feedback-message');
@@ -46,7 +53,7 @@ export default class FeedbackForm extends Component {
 				$feedbackSubmitBtn.setAttribute('class', 'diabledBtn');
 				$feedbackSubmitBtn.setAttribute('disabled', 'true');
 				$feedbackMsg.innerText = '';
-			} else if (value.length < 2) {
+			} else if (value.length < 10) {
 				this.setState({ isDisabled: true }, 'stopRender');
 				$feedbackSubmitBtn.setAttribute('class', 'diabledBtn');
 				$feedbackSubmitBtn.setAttribute('disabled', 'true');
@@ -59,8 +66,9 @@ export default class FeedbackForm extends Component {
 			}
 			this.setState({ text: value }, 'stopRender');
 		});
+	}
 
-		// submit
+	handleSubmitEvent() {
 		this.addEvent('click', 'button', async (e) => {
 			e.preventDefault();
 			const { rating, text, isDisabled } = this.$state;

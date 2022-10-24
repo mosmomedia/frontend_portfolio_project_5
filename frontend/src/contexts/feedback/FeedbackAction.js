@@ -20,6 +20,17 @@ export const postFeedback = async (formData) => {
 	}
 };
 
+//  update a feedback
+export const updateFeedback = async (formData, id) => {
+	try {
+		const res = await axios.put(API_URL + id, formData);
+
+		return res.data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 //  delete a feedback
 export const deleteFeedback = async (id) => {
 	try {

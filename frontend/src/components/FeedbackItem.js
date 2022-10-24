@@ -18,8 +18,14 @@ export default class FeedbackItem extends Component {
 
 	setEvent() {
 		this.addEvent('click', '.feedback-btn-edit', (e) => {
-			const { rating, text } = this.$props;
-			console.log(rating, text);
+			const { rating, text, _id, switchEditMode, setCurrentFeedback } =
+				this.$props;
+
+			const currentFeedback = { rating, text, _id };
+
+			setCurrentFeedback(currentFeedback);
+
+			switchEditMode();
 		});
 
 		this.addEvent('click', '.feedback-btn-delete', async (e) => {

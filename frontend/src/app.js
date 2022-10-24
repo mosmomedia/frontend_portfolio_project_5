@@ -3,12 +3,14 @@ import Component from './core/Component.js';
 import Header from './components/Header.js';
 import About from './pages/About.js';
 import Feedback from './pages/Feedback.js';
+import SignIn from './pages/SignIn.js';
+
 import NotFound from './components/shared/NotFound.js';
 
 const routes = [
 	{ path: '/', component: Feedback },
 	{ path: '/about', component: About },
-	// { path: '/service', component: Login }
+	{ path: '/sign-in', component: SignIn },
 ];
 
 export default class App extends Component {
@@ -35,12 +37,9 @@ export default class App extends Component {
 	setEvent() {
 		this.addEvent('click', '#navigation', (e) => {
 			if (!e.target.matches('#navigation > li > a')) return;
-
 			e.preventDefault();
 
 			const path = e.target.getAttribute('href');
-
-			if (window.location.pathname === path) return;
 
 			window.history.pushState(null, null, path);
 			this.render(path);

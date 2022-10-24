@@ -25,6 +25,31 @@ export const postFeedback = async (req, res) => {
 	res.status(200).json(newFeedback);
 };
 
+//@ update a feedback
+//@ PUT /api/feedback
+//@ Private
+
+export const updateFeedback = async (req, res) => {
+	const { id } = req.params;
+	if (!id) {
+		res.status(400);
+		throw new Error('ID not found ');
+	}
+
+	const feedback = await Feedback.findById(id);
+
+	if (!feedback) {
+		res.status(404);
+		throw new Error('feedback not found');
+	}
+
+	const updatedFeedback = await Feedback.findByIdAndUpdate(id, req.body, {
+		new: true,
+	});
+
+	res.status(200).json(updatedFeedback);
+};
+
 //@ Delete a feedback
 //@ DELTE /api/feedback
 //@ Private

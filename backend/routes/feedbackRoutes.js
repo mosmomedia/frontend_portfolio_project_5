@@ -6,9 +6,10 @@ import {
 	getAllfeedbacks,
 	postFeedback,
 	deleteFeedback,
+	updateFeedback,
 } from '../controllers/feedbackController.js';
 
 router.route('/').get(getAllfeedbacks).post(postFeedback);
-router.route('/:id').delete(deleteFeedback);
+router.route('/:id').put(updateFeedback).delete(deleteFeedback);
 
 export default router;

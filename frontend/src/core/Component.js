@@ -24,6 +24,7 @@ export default class Component {
 	}
 
 	setEvent() {}
+
 	addEvent(eventType, selector, callback) {
 		this.$target.addEventListener(eventType, (event) => {
 			if (!event.target.closest(selector)) return false;

@@ -326,12 +326,15 @@ main {
 	border: solid 1px #eee;
 }
 
-/* ${tw`absolute  cursor-pointer bg-none border-none`} */
 .feedback-btn-edit,
 .feedback-btn-delete {
 	position: absolute;
 	cursor: pointer;
 	top: 0.5rem;
+}
+
+#feedback-btn.diabledBtn {
+	cursor: default;
 }
 
 .feedback-btn-edit {

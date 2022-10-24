@@ -2,11 +2,14 @@ import Component from '../core/Component.js';
 
 import FeedbackForm from '../components/FeedbackForm.js';
 import FeedbackList from '../components/FeedbackList.js';
+import FeedbackEditForm from '../components/FeedbackEditForm.js';
+
 import Spinner from '../components/shared/Spinner.js';
 
 import {
 	getAllFeedbacks,
 	postFeedback,
+	updateFeedback,
 	deleteFeedback,
 } from '../contexts/feedback/FeedbackAction.js';
 
@@ -15,6 +18,8 @@ export default class Feedback extends Component {
 		this.$state = {
 			isLoading: false,
 			feedbackList: [],
+			currentFeedback: null,
+			editMode: false,
 		};
 	}
 
@@ -34,18 +39,28 @@ export default class Feedback extends Component {
 	}
 
 	mounted() {
-		const { isLoading } = this.$state;
+		const { isLoading, editMode } = this.$state;
 		const {
+			getCurrentFeedback,
+			setCurrentFeedback,
+			switchEditMode,
 			getLoadingState,
 			getFeedbackList,
 			fetchAllFeedback,
 			createFeedback,
+			editFeedback,
 			removeFeedback,
 		} = this;
 
 		if (isLoading) {
 			const $spinner = this.$target.querySelector('#spinner');
 			new Spinner($spinner);
+		} else if (editMode) {
+			const $feedback = this.$target.querySelector('#feedback');
+			new FeedbackEditForm($feedback, {
+				getCurrentFeedback: getCurrentFeedback.bind(this),
+				editFeedback: editFeedback.bind(this),
+			});
 		} else {
 			const $feedbackForm = this.$target.querySelector('#feedback-form');
 			const $feedbackList = this.$target.querySelector('#feedback-list');
@@ -55,8 +70,10 @@ export default class Feedback extends Component {
 			});
 
 			new FeedbackList($feedbackList, {
+				setCurrentFeedback: setCurrentFeedback.bind(this),
 				getFeedbackList: getFeedbackList.bind(this),
 				getLoadingState: getLoadingState.bind(this),
+				switchEditMode: switchEditMode.bind(this),
 				fetchAllFeedback: fetchAllFeedback.bind(this),
 				removeFeedback: removeFeedback.bind(this),
 			});
@@ -73,6 +90,19 @@ export default class Feedback extends Component {
 
 	getFeedbackList() {
 		return this.$state.feedbackList;
+	}
+
+	getCurrentFeedback() {
+		return this.$state.currentFeedback;
+	}
+
+	setCurrentFeedback(currentFeedback) {
+		this.setState({ currentFeedback }, 'stopRender');
+	}
+
+	switchEditMode() {
+		const { editMode } = this.$state;
+		this.setState({ editMode: !editMode });
 	}
 
 	async fetchAllFeedback(target) {
@@ -100,6 +130,26 @@ export default class Feedback extends Component {
 			this.setState({
 				feedbackList: payload,
 				isLoading: false,
+			});
+		}, 200);
+	}
+
+	async editFeedback(formData, id) {
+		this.handleLoadingState(true);
+		const updatedFeedback = await updateFeedback(formData, id);
+		const { feedbackList } = this.$state;
+		const payload = feedbackList.map((feedback) => {
+			if (feedback._id === id) {
+				return updatedFeedback;
+			} else {
+				return feedback;
+			}
+		});
+		setTimeout(() => {
+			this.setState({
+				feedbackList: payload,
+				isLoading: false,
+				editMode: false,
 			});
 		}, 200);
 	}
