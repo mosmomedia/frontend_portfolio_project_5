@@ -18,8 +18,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
+// feedback
 import feedbackRoutes from './routes/feedbackRoutes.js';
 app.use('/api/feedback', feedbackRoutes);
+
+// users
+
+import authRoutes from './routes/authRoutes.js';
+app.use('/api/auth', authRoutes);
 
 app.use('/', express.static(path.join(__dirname, '../frontend')));
 app.get('*', (req, res) => {

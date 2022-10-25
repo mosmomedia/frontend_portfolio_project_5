@@ -1,11 +1,12 @@
 import Component from './core/Component.js';
 
+import NotFound from './components/shared/NotFound.js';
 import Header from './components/Header.js';
 import About from './pages/About.js';
 import Feedback from './pages/Feedback.js';
 import SignIn from './pages/SignIn.js';
 
-import NotFound from './components/shared/NotFound.js';
+import { loginUser } from './contexts/auth/AuthAction.js';
 
 const routes = [
 	{ path: '/', component: Feedback },
@@ -14,6 +15,18 @@ const routes = [
 ];
 
 export default class App extends Component {
+	setup() {
+		const user = JSON.parse(localStorage.getItem('user'));
+
+		this.$state = {
+			user: user ? user : null,
+			isError: false,
+			isSuccess: false,
+			isLoading: false,
+			message: '',
+		};
+	}
+
 	template() {
 		return `
 			<header></header>
@@ -23,7 +36,11 @@ export default class App extends Component {
 
 	mounted() {
 		const $header = this.$target.querySelector('header');
-		new Header($header);
+		const { getState, handleLogout } = this;
+		new Header($header, {
+			getState: getState.bind(this),
+			handleLogout: handleLogout.bind(this),
+		});
 
 		window.addEventListener('DOMContentLoaded', () => {
 			this.render();
@@ -31,18 +48,6 @@ export default class App extends Component {
 
 		window.addEventListener('popstate', () => {
 			this.render();
-		});
-	}
-
-	setEvent() {
-		this.addEvent('click', '#navigation', (e) => {
-			if (!e.target.matches('#navigation > li > a')) return;
-			e.preventDefault();
-
-			const path = e.target.getAttribute('href');
-
-			window.history.pushState(null, null, path);
-			this.render(path);
 		});
 	}
 
@@ -64,9 +69,44 @@ export default class App extends Component {
 				}
 			});
 
-			new component($main);
+			const { user, isSuccess } = this.$state;
+			if (_path === '/sign-in' && (user || isSuccess)) {
+				window.location.href = '/';
+			} else {
+				const { handleLogin } = this;
+				new component($main, {
+					handleLogin: handleLogin.bind(this),
+				});
+			}
 		} catch (err) {
 			console.error(err);
 		}
 	};
+
+	setEvent() {
+		this.addEvent('click', '#navigation', (e) => {
+			if (!e.target.matches('#navigation > li > a')) return;
+			e.preventDefault();
+
+			const path = e.target.getAttribute('href');
+
+			window.history.pushState(null, null, path);
+			this.render(path);
+		});
+	}
+
+	getState() {
+		return this.$state;
+	}
+
+	async handleLogin(formData) {
+		const payload = await loginUser(formData);
+		console.log(payload);
+		// this.setState({ user: payload, isSuccess: true });
+	}
+
+	async handleLogout() {
+		localStorage.removeItem('user');
+		this.setState({ user: null });
+	}
 }
