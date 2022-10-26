@@ -6,7 +6,7 @@ export const getAllFeedbacks = async () => {
 		const res = await axios.get(API_URL);
 		return res.data;
 	} catch (error) {
-		console.log(error);
+		return res.error;
 	}
 };
 

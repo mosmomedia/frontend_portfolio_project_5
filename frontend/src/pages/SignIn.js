@@ -60,6 +60,7 @@ export default class SignIn extends Component {
 			if (email && password) {
 				const { handleLogin } = this.$props;
 				await handleLogin({ email, password });
+				this.setState({ email: '', password: '' });
 			}
 		});
 	}

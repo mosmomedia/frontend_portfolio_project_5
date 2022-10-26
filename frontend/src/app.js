@@ -5,13 +5,15 @@ import Header from './components/Header.js';
 import About from './pages/About.js';
 import Feedback from './pages/Feedback.js';
 import SignIn from './pages/SignIn.js';
+import SignUp from './pages/SignUp.js';
 
-import { loginUser } from './contexts/auth/AuthAction.js';
+import { loginUser, registerUser } from './contexts/auth/AuthAction.js';
 
 const routes = [
 	{ path: '/', component: Feedback },
 	{ path: '/about', component: About },
 	{ path: '/sign-in', component: SignIn },
+	{ path: '/sign-up', component: SignUp },
 ];
 
 export default class App extends Component {
@@ -58,6 +60,7 @@ export default class App extends Component {
 				routes.find((route) => route.path === _path)?.component || NotFound;
 			const $main = this.$target.querySelector('main');
 			const $navItem = this.$target.querySelectorAll('a');
+
 			$navItem.forEach((element) => {
 				const path = element.getAttribute('href');
 				if (path === _path) {
@@ -70,12 +73,16 @@ export default class App extends Component {
 			});
 
 			const { user, isSuccess } = this.$state;
-			if (_path === '/sign-in' && (user || isSuccess)) {
+			if (
+				(_path === '/sign-in' || _path === '/sign-up') &&
+				(user || isSuccess)
+			) {
 				window.location.href = '/';
 			} else {
-				const { handleLogin } = this;
+				const { handleLogin, handleRegister } = this;
 				new component($main, {
 					handleLogin: handleLogin.bind(this),
+					handleRegister: handleRegister.bind(this),
 				});
 			}
 		} catch (err) {
@@ -101,12 +108,28 @@ export default class App extends Component {
 
 	async handleLogin(formData) {
 		const payload = await loginUser(formData);
-		console.log(payload);
-		// this.setState({ user: payload, isSuccess: true });
+		const { success, data } = payload;
+		if (success) {
+			this.setState({ user: data, isSuccess: true });
+		} else {
+			alert(data);
+		}
+	}
+
+	async handleRegister(formData) {
+		const payload = await registerUser(formData);
+		const { success, data } = payload;
+
+		if (success) {
+			this.setState({ user: data, isSuccess: true });
+		} else {
+			alert(data);
+		}
 	}
 
 	async handleLogout() {
 		localStorage.removeItem('user');
-		this.setState({ user: null });
+		this.setState({ user: null }, 'stopRender');
+		window.location.href = '/';
 	}
 }

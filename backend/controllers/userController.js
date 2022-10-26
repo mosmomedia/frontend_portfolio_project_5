@@ -11,47 +11,51 @@ export const handleFunc = async (req, res) => {};
 export const registerUser = async (req, res) => {
 	const { name, email, password } = req.body;
 
-	// Validation
-	if (!name || !email || !password) {
-		res.status(400);
-		throw new Error('Please include all fields');
+	try {
+		// Validation
+		if (!name || !email || !password) {
+			res.status(400);
+			throw new Error('Please include all fields');
+		}
+
+		// Find if user already exists
+		const userExists = await User.findOne({ email });
+
+		if (userExists) {
+			res.status(400);
+			throw new Error('유저가 이미 존재합니다.');
+		}
+
+		// Hash password
+		const salt = await bcrypt.genSalt(10);
+		const hashedPassword = await bcrypt.hash(password, salt);
+
+		// Create user
+		const user = await User.create({
+			name,
+			email,
+			password: hashedPassword,
+		});
+
+		if (!user) {
+			res.status(400);
+			throw new Error('유효한 유저 정보가 아닙니다.');
+		}
+
+		// Generate token
+		const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+			expiresIn: '30d',
+		});
+
+		res.status(201).json({
+			_id: user._id,
+			name: user.name,
+			email: user.email,
+			token,
+		});
+	} catch (error) {
+		res.json(error.message);
 	}
-
-	// Find if user already exists
-	const userExists = await User.findOne({ email });
-
-	if (userExists) {
-		res.status(400);
-		throw new Error('User already exists');
-	}
-
-	// Hash password
-	const salt = await bcrypt.genSalt(10);
-	const hashedPassword = await bcrypt.hash(password, salt);
-
-	// Create user
-	const user = await User.create({
-		name,
-		email,
-		password: hashedPassword,
-	});
-
-	if (!user) {
-		res.status(400);
-		throw new Error('Invalid user data');
-	}
-
-	// Generate token
-	const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-		expiresIn: '30d',
-	});
-
-	res.status(201).json({
-		_id: user._id,
-		name: user.name,
-		email: user.email,
-		token,
-	});
 };
 
 // @desc    Login a user
@@ -64,7 +68,7 @@ export const loginUser = async (req, res) => {
 
 		if (!user) {
 			res.status(401);
-			throw new Error('Invalid user data');
+			throw new Error('아이디를 확인하세요.');
 		}
 
 		// Check user and passwords match
@@ -72,22 +76,20 @@ export const loginUser = async (req, res) => {
 
 		if (!checkPw) {
 			res.status(401);
-			throw new Error('Invalid password');
+			throw new Error('비밀번호를 확인하세요.');
 		}
 
-		if (checkPw) {
-			const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-				expiresIn: '30d',
-			});
+		const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+			expiresIn: '30d',
+		});
 
-			res.status(200).json({
-				_id: user._id,
-				name: user.name,
-				email: user.email,
-				token,
-			});
-		}
+		res.status(200).json({
+			_id: user._id,
+			name: user.name,
+			email: user.email,
+			token,
+		});
 	} catch (error) {
-		res.json({ msg: error.message });
+		res.json(error.message);
 	}
 };
