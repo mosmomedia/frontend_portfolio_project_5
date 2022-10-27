@@ -19,7 +19,6 @@ const routes = [
 export default class App extends Component {
 	setup() {
 		const user = JSON.parse(localStorage.getItem('user'));
-
 		this.$state = {
 			user: user ? user : null,
 			isError: false,
@@ -79,10 +78,11 @@ export default class App extends Component {
 			) {
 				window.location.href = '/';
 			} else {
-				const { handleLogin, handleRegister } = this;
+				const { handleLogin, handleRegister, getState } = this;
 				new component($main, {
 					handleLogin: handleLogin.bind(this),
 					handleRegister: handleRegister.bind(this),
+					getState: getState.bind(this),
 				});
 			}
 		} catch (err) {

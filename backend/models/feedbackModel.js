@@ -4,7 +4,7 @@ const feedbackSchema = new mongoose.Schema(
 	{
 		userRef: {
 			type: mongoose.Schema.Types.ObjectId,
-			required: false,
+			required: true,
 		},
 		rating: {
 			type: Number,
@@ -16,7 +16,7 @@ const feedbackSchema = new mongoose.Schema(
 		},
 		userName: {
 			type: String,
-			required: false,
+			required: true,
 		},
 	},
 	{

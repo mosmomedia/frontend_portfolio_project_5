@@ -29,6 +29,9 @@ export default class FeedbackForm extends Component {
 			getRating: this.getRating.bind(this),
 			setState: this.setState.bind(this),
 		});
+
+		// input focus
+		this.handleInputFocus();
 	}
 
 	getRating() {
@@ -42,6 +45,23 @@ export default class FeedbackForm extends Component {
 
 		// submit
 		this.handleSubmitEvent();
+	}
+
+	handleInputFocus() {
+		const $inputFocus = this.$target.querySelector('#input-text');
+
+		$inputFocus.onfocus = (e) => {
+			const { getState } = this.$props;
+			const { user } = getState();
+			if (!user) {
+				const $feedbackMsg = this.$target.querySelector('#feedback-message');
+				$feedbackMsg.innerText = '로그인이 필요한 서비스 입니다.';
+				e.target.blur();
+				setTimeout(() => {
+					$feedbackMsg.innerText = '';
+				}, 1500);
+			}
+		};
 	}
 
 	handleInputEvent() {

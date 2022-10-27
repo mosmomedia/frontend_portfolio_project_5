@@ -2,16 +2,23 @@ import Component from '../core/Component.js';
 
 export default class FeedbackItem extends Component {
 	template() {
+		const user = JSON.parse(localStorage.getItem('user'));
+
 		const { rating, text } = this.$props;
 
 		return `
 		<div class='feedback-rating'>${rating}</div>
-		<button class='feedback-btn-edit' type='submit'>
-			<i class="fa-regular fa-pen-to-square"></i>
-		</button> 
-		<button class='feedback-btn-delete'>
-			<i class="fa-solid fa-xmark"></i>
-		</button> 
+		${
+			user
+				? `
+				<button class="feedback-btn-edit" type="submit">
+					<i class="fa-regular fa-pen-to-square"></i>
+				</button> 
+				<button class="feedback-btn-delete">
+					<i class="fa-solid fa-xmark"></i>
+				</button>`
+				: ''
+		}
 		<p class='feedback-text'>${text}</p>
 		`;
 	}

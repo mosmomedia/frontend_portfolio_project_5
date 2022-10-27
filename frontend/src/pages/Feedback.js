@@ -40,6 +40,7 @@ export default class Feedback extends Component {
 
 	mounted() {
 		const { isLoading, editMode } = this.$state;
+		const { getState } = this.$props;
 		const {
 			getCurrentFeedback,
 			setCurrentFeedback,
@@ -67,6 +68,7 @@ export default class Feedback extends Component {
 
 			new FeedbackForm($feedbackForm, {
 				createFeedback: createFeedback.bind(this),
+				getState: getState,
 			});
 
 			new FeedbackList($feedbackList, {
