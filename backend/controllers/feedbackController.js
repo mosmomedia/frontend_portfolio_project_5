@@ -1,7 +1,5 @@
 import Feedback from '../models/feedbackModel.js';
 
-export const handleFunc = async (req, res) => {};
-
 //@ get all feedback
 //@ GET /api/feedback
 //@ Public
@@ -50,7 +48,6 @@ export const updateFeedback = async (req, res) => {
 	const updatedFeedback = await Feedback.findByIdAndUpdate(id, req.body, {
 		new: true,
 	});
-
 	res.status(200).json(updatedFeedback);
 };
 

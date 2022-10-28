@@ -158,18 +158,20 @@ export default class Feedback extends Component {
 	}
 
 	async removeFeedback(id) {
-		this.handleLoadingState(true);
-		const { success } = await deleteFeedback(id);
-		if (success) {
-			const { feedbackList } = this.$state;
-			const payload = feedbackList.filter((item) => item._id !== id);
+		if (window.confirm('Are you sure?')) {
+			this.handleLoadingState(true);
+			const { success } = await deleteFeedback(id);
+			if (success) {
+				const { feedbackList } = this.$state;
+				const payload = feedbackList.filter((item) => item._id !== id);
 
-			setTimeout(() => {
-				this.setState({
-					feedbackList: payload,
-					isLoading: false,
-				});
-			}, 200);
+				setTimeout(() => {
+					this.setState({
+						feedbackList: payload,
+						isLoading: false,
+					});
+				}, 200);
+			}
 		}
 	}
 }

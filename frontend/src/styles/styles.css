@@ -164,6 +164,13 @@ nav {
 	font-weight: 500;
 }
 
+#navigation a:hover {
+	color: #2c2c2c;
+}
+#navigation button:hover {
+	color: #ff6a95;
+}
+
 .selectedNavItem {
 	color: #2c2c2c;
 }

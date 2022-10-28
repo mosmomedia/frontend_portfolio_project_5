@@ -3,42 +3,63 @@ const API_URL = 'api/feedback/';
 //  get all feedback
 export const getAllFeedbacks = async () => {
 	try {
-		const res = await axios.get(API_URL);
-		return res.data;
+		const res = await fetch(API_URL);
+		const feedbackList = await res.json();
+		return feedbackList;
 	} catch (error) {
-		return res.error;
+		console.log('Failure : fetching feedback list', error);
+		return error;
 	}
 };
 
 // create a feedback
 export const postFeedback = async (formData) => {
 	try {
-		const res = await axios.post(API_URL, formData);
-		return res.data;
+		const res = await fetch(API_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formData),
+		});
+
+		const newFeedback = await res.json();
+		return newFeedback;
 	} catch (error) {
-		console.log(error);
+		console.log('Failure : create a new feedback ', error);
+		return error;
 	}
 };
 
 //  update a feedback
 export const updateFeedback = async (formData, id) => {
 	try {
-		const res = await axios.put(API_URL + id, formData);
+		// const res = await axios.put(API_URL + id, formData);
 
-		return res.data;
+		const res = await fetch(API_URL + id, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formData),
+		});
+
+		const updatedFeedback = await res.json();
+		return updatedFeedback;
 	} catch (error) {
-		console.log(error);
+		console.log('Failure : update a feedback ', error);
+		return error;
 	}
 };
 
 //  delete a feedback
 export const deleteFeedback = async (id) => {
 	try {
-		if (window.confirm('Are you sure?')) {
-			const res = await axios.delete(API_URL + id);
-			return res.data;
-		}
+		const res = await fetch(API_URL + id, { method: 'DELETE' });
+		const deletedState = await res.json();
+		return deletedState;
 	} catch (error) {
-		console.log(error);
+		console.log('Failure : delete a feedback ', error);
+		return error;
 	}
 };
