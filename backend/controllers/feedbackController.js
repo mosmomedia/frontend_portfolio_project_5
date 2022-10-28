@@ -7,7 +7,10 @@ export const handleFunc = async (req, res) => {};
 //@ Public
 
 export const getAllfeedbacks = async (req, res) => {
-	const allFeedbacks = await Feedback.find();
+	const allFeedbacks = await Feedback.find().populate({
+		path: 'user',
+		select: 'email name',
+	});
 	res.status(200).json(allFeedbacks);
 };
 
@@ -16,10 +19,11 @@ export const getAllfeedbacks = async (req, res) => {
 //@ Private
 
 export const postFeedback = async (req, res) => {
-	const { rating, text } = req.body;
+	const { rating, text, _id } = req.body;
 	const newFeedback = await Feedback.create({
 		rating,
 		text,
+		user: _id,
 	});
 
 	res.status(200).json(newFeedback);

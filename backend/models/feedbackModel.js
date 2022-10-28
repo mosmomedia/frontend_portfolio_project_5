@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 
 const feedbackSchema = new mongoose.Schema(
 	{
-		userRef: {
+		user: {
 			type: mongoose.Schema.Types.ObjectId,
+			ref: 'User',
 			required: true,
 		},
 		rating: {
@@ -11,10 +12,6 @@ const feedbackSchema = new mongoose.Schema(
 			required: true,
 		},
 		text: {
-			type: String,
-			required: true,
-		},
-		userName: {
 			type: String,
 			required: true,
 		},

@@ -78,6 +78,7 @@ export default class Feedback extends Component {
 				switchEditMode: switchEditMode.bind(this),
 				fetchAllFeedback: fetchAllFeedback.bind(this),
 				removeFeedback: removeFeedback.bind(this),
+				getState: getState,
 			});
 		}
 	}

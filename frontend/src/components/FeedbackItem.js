@@ -2,14 +2,14 @@ import Component from '../core/Component.js';
 
 export default class FeedbackItem extends Component {
 	template() {
-		const user = JSON.parse(localStorage.getItem('user'));
+		const currentUser = JSON.parse(localStorage.getItem('user'));
 
-		const { rating, text } = this.$props;
+		const { rating, text, user } = this.$props;
 
 		return `
 		<div class='feedback-rating'>${rating}</div>
 		${
-			user
+			currentUser && user && currentUser._id === user._id
 				? `
 				<button class="feedback-btn-edit" type="submit">
 					<i class="fa-regular fa-pen-to-square"></i>

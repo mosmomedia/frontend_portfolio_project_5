@@ -93,8 +93,11 @@ export default class FeedbackForm extends Component {
 			e.preventDefault();
 			const { rating, text, isDisabled } = this.$state;
 			if (rating && text && !isDisabled) {
-				const { createFeedback } = this.$props;
-				const formData = { rating, text };
+				const { createFeedback, getState } = this.$props;
+				const {
+					user: { _id },
+				} = getState();
+				const formData = { rating, text, _id };
 				await createFeedback(formData);
 			}
 		});
