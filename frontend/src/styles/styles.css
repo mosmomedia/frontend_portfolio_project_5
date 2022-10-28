@@ -135,7 +135,48 @@ p {
 		transform: rotate(360deg);
 	}
 }
+/* @ not found */
+#notfound {
+	background-color: #ff6a95;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	place-content: center;
+	text-align: center;
+}
 
+#notfound h1,
+#notfound h2,
+#notfound button {
+	margin: 1.5rem 0;
+	color: #2c2c2c;
+}
+
+#notfound h1 {
+	font-size: 4rem;
+}
+
+#notfound h2 {
+	font-size: 1.5rem;
+}
+
+#notfound button {
+	font-size: 1.25rem;
+	padding: 1rem 0;
+	color: #f4f4f4;
+	background-color: #2c2c2c;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+#notfound button:hover {
+	color: #fff;
+	background-color: #000;
+}
 /* @ Navigation */
 
 header {

@@ -56,8 +56,15 @@ export default class App extends Component {
 		const _path = path ?? window.location.pathname;
 		try {
 			const component =
-				routes.find((route) => route.path === _path)?.component || NotFound;
+				routes.find((route) => route.path === _path)?.component || null;
+
 			const $main = this.$target.querySelector('main');
+
+			// wrong routes
+			if (component === null) {
+				return new NotFound($main);
+			}
+
 			const $navItem = this.$target.querySelectorAll('a');
 
 			$navItem.forEach((element) => {
@@ -79,6 +86,7 @@ export default class App extends Component {
 				window.location.href = '/';
 			} else {
 				const { handleLogin, handleRegister, getState } = this;
+
 				new component($main, {
 					handleLogin: handleLogin.bind(this),
 					handleRegister: handleRegister.bind(this),

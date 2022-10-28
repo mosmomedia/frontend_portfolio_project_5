@@ -54,7 +54,7 @@ export default class Signup extends Component {
 				type="password"
 				name="password2"
 				autocomplete=''
-				placeholder="Password Confirm"
+				placeholder="Confirm Password"
 				/>
 
 				
