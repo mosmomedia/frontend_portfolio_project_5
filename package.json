@@ -7,7 +7,7 @@
 		"wdev": "nodemon dist/bundle-back.js",
 		"dev": "nodemon backend/server.js",
 		"build": "webpack -w",
-		"heroku-postbuild": "webpack -w"
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack"
 	},
 	"author": "",
 	"license": "ISC",
