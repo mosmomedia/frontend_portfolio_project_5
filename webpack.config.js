@@ -15,7 +15,7 @@ const frontConfig = {
 	target: 'web',
 	entry: './frontend/src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'docs'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle-front.js',
 	},
 	plugins: [
@@ -54,7 +54,7 @@ const backConfig = {
 	externals: [nodeExternals()],
 	entry: './backend/server.js',
 	output: {
-		path: path.resolve(__dirname, 'docs'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle-back.js',
 	},
 
