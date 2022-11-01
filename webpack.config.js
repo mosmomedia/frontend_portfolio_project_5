@@ -15,7 +15,7 @@ const frontConfig = {
 	target: 'web',
 	entry: './frontend/src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'dist/js'),
+		path: path.resolve(__dirname, 'docs'),
 		filename: 'bundle-front.js',
 	},
 	plugins: [
@@ -46,7 +46,7 @@ const frontConfig = {
 	},
 	devServer: {},
 	devtool: 'inline-source-map',
-	mode: 'development',
+	mode: 'production',
 };
 
 const backConfig = {
@@ -54,12 +54,12 @@ const backConfig = {
 	externals: [nodeExternals()],
 	entry: './backend/server.js',
 	output: {
-		path: path.resolve(__dirname, 'dist/js'),
+		path: path.resolve(__dirname, 'docs'),
 		filename: 'bundle-back.js',
 	},
 
 	resolve: {
-		extensions: ['.js', 'css'],
+		extensions: ['.js'],
 	},
 	module: {
 		rules: [
@@ -76,7 +76,7 @@ const backConfig = {
 		],
 	},
 
-	mode: 'development',
+	mode: 'production',
 };
 
 module.exports = [frontConfig, backConfig];

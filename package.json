@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"wdev": "nodemon dist/js/bundle-back.js",
+		"wdev": "nodemon docs/bundle-back.js",
 		"dev": "nodemon backend/server.js",
 		"build": "webpack -w"
 	},
