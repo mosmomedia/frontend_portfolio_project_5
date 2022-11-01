@@ -1,22 +1,65 @@
-import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
-// const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+// Node.js - os 모듈 불러오기
+const os = require('os');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// CssMinimizerPlugin 모듈 불러오기
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-export default {
-	// enntry file
-	entry: './backend/server.js',
-	// 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
+//
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const frontConfig = {
+	target: 'web',
+	entry: './frontend/src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist/js'),
-		filename: 'bundle.js',
+		filename: 'bundle-front.js',
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'frontend/public', 'index.html'),
+		}),
+		new MiniCssExtractPlugin(),
+	],
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader'],
+			},
+		],
+	},
+	optimization: {
+		// 압축
+		minimize: true,
+		// 미니마이저
+		minimizer: [
+			// 플러그인 인스턴스 생성
+			new CssMinimizerPlugin({
+				// CPU 멀티 프로세서 병렬화 옵션 (기본 값: true)
+				parallel: os.cpus().length - 1,
+			}),
+		],
+	},
+	devServer: {},
+	devtool: 'inline-source-map',
+	mode: 'development',
+};
+
+const backConfig = {
+	target: 'node',
+	externals: [nodeExternals()],
+	entry: './backend/server.js',
+	output: {
+		path: path.resolve(__dirname, 'dist/js'),
+		filename: 'bundle-back.js',
+	},
+
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', 'css'],
 	},
 	module: {
 		rules: [
@@ -27,14 +70,13 @@ export default {
 					loader: 'babel-loader',
 					options: {
 						presets: ['@babel/preset-env'],
-						// plugins: ['@babel/plugin-proposal-class-properties'],
 					},
 				},
 			},
 		],
 	},
-	plugins: [new NodePolyfillPlugin()],
-	devtool: 'source-map',
-	// https://webpack.js.org/concepts/mode/#mode-development
+
 	mode: 'development',
 };
+
+module.exports = [frontConfig, backConfig];
