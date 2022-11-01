@@ -3,7 +3,11 @@ const API_URL = 'api/feedback/';
 //  get all feedback
 export const getAllFeedbacks = async () => {
 	try {
-		const res = await fetch(API_URL);
+		const res = await fetch(API_URL, {
+			headers: {
+				Accept: 'application/json',
+			},
+		});
 		const feedbackList = await res.json();
 		return feedbackList;
 	} catch (error) {
