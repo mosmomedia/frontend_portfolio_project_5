@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"description": "",
 	"main": "index.js",
+	"homepage": "https://github.com/mosmomedia/frontend_portfolio_project_5/",
 	"scripts": {
 		"wdev": "nodemon docs/bundle-back.js",
 		"dev": "nodemon backend/server.js",
