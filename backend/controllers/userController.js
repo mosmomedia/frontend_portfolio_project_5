@@ -1,14 +1,12 @@
-import User from '../models/userModel.js';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-
-export const handleFunc = async (req, res) => {};
+const User = require('../models/userModel');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // @desc    Register a new user
 // @route   /api/users
 // @access  Public
 
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
 	const { name, email, password } = req.body;
 
 	try {
@@ -61,7 +59,7 @@ export const registerUser = async (req, res) => {
 // @desc    Login a user
 // @route   /api/users/login
 // @access  Public
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
 	try {
 		const { email, password } = req.body;
 		const user = await User.findOne({ email });
@@ -92,4 +90,9 @@ export const loginUser = async (req, res) => {
 	} catch (error) {
 		res.json(error.message);
 	}
+};
+
+module.exports = {
+	registerUser,
+	loginUser,
 };

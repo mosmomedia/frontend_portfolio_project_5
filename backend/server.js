@@ -1,15 +1,10 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-import express from 'express';
-import dotenv from 'dotenv';
-import connectDB from './config/db.js';
+const path = require('path');
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db.js');
 
 dotenv.config();
 connectDB();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -19,13 +14,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 // feedback
-import feedbackRoutes from './routes/feedbackRoutes.js';
-app.use('/api/feedback', feedbackRoutes);
+app.use('/api/feedback', require('./routes/feedbackRoutes.js'));
 
 // users
-
-import authRoutes from './routes/authRoutes.js';
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', require('./routes/authRoutes.js'));
 
 app.use('/', express.static(path.join(__dirname, '../frontend')));
 app.get('*', (req, res) => {

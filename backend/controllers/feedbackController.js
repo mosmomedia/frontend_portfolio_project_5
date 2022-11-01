@@ -1,10 +1,10 @@
-import Feedback from '../models/feedbackModel.js';
+const Feedback = require('../models/feedbackModel.js');
 
 //@ get all feedback
 //@ GET /api/feedback
 //@ Public
 
-export const getAllfeedbacks = async (req, res) => {
+const getAllfeedbacks = async (req, res) => {
 	const allFeedbacks = await Feedback.find().populate({
 		path: 'user',
 		select: 'email name',
@@ -16,7 +16,7 @@ export const getAllfeedbacks = async (req, res) => {
 //@ POST /api/feedback
 //@ Private
 
-export const postFeedback = async (req, res) => {
+const postFeedback = async (req, res) => {
 	const { rating, text, _id } = req.body;
 	const newFeedback = await Feedback.create({
 		rating,
@@ -31,7 +31,7 @@ export const postFeedback = async (req, res) => {
 //@ PUT /api/feedback
 //@ Private
 
-export const updateFeedback = async (req, res) => {
+const updateFeedback = async (req, res) => {
 	const { id } = req.params;
 	if (!id) {
 		res.status(400);
@@ -55,7 +55,7 @@ export const updateFeedback = async (req, res) => {
 //@ DELTE /api/feedback
 //@ Private
 
-export const deleteFeedback = async (req, res) => {
+const deleteFeedback = async (req, res) => {
 	const { id } = req.params;
 
 	const feedback = await Feedback.findById(id);
@@ -68,4 +68,11 @@ export const deleteFeedback = async (req, res) => {
 	await feedback.remove();
 
 	res.status(200).json({ success: true });
+};
+
+module.exports = {
+	getAllfeedbacks,
+	postFeedback,
+	updateFeedback,
+	deleteFeedback,
 };

@@ -1,15 +1,15 @@
-import express from 'express';
+const express = require('express');
 
 const router = express.Router();
 
-import {
+const {
 	getAllfeedbacks,
 	postFeedback,
 	deleteFeedback,
 	updateFeedback,
-} from '../controllers/feedbackController.js';
+} = require('../controllers/feedbackController');
 
 router.route('/').get(getAllfeedbacks).post(postFeedback);
 router.route('/:id').put(updateFeedback).delete(deleteFeedback);
 
-export default router;
+module.exports = router;
