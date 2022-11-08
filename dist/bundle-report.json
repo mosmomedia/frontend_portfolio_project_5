@@ -1,15 +1,14 @@
 {
-  "hash": "5d83945888f2ee27f721",
+  "hash": "9c2c974d169ba270be80",
   "version": "5.74.0",
-  "time": 455,
-  "builtAt": 1667915381170,
+  "time": 1021,
+  "builtAt": 1667915728686,
   "publicPath": "auto",
   "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
   "assetsByChunkName": {
     "main": [
       "main.css",
-      "bundle-front.js",
-      "179.5c7b097217a303f2cb21.hot-update.js"
+      "bundle-front.js"
     ]
   },
   "assets": [
@@ -23,32 +22,6 @@
       "info": {
         "javascriptModule": false,
         "size": 245697
-      },
-      "chunkNames": [
-        "main"
-      ],
-      "chunkIdHints": [],
-      "auxiliaryChunkNames": [],
-      "auxiliaryChunkIdHints": [],
-      "related": {},
-      "chunks": [
-        179
-      ],
-      "auxiliaryChunks": [],
-      "isOverSizeLimit": false
-    },
-    {
-      "type": "asset",
-      "name": "179.5c7b097217a303f2cb21.hot-update.js",
-      "size": 24404,
-      "emitted": true,
-      "comparedForEmit": false,
-      "cached": false,
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true,
-        "fullhash": "5c7b097217a303f2cb21",
-        "size": 24404
       },
       "chunkNames": [
         "main"
@@ -105,28 +78,6 @@
       "chunks": [],
       "auxiliaryChunks": [],
       "isOverSizeLimit": false
-    },
-    {
-      "type": "asset",
-      "name": "main.5c7b097217a303f2cb21.hot-update.json",
-      "size": 25,
-      "emitted": true,
-      "comparedForEmit": false,
-      "cached": false,
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true,
-        "fullhash": "5c7b097217a303f2cb21",
-        "size": 25
-      },
-      "chunkNames": [],
-      "chunkIdHints": [],
-      "auxiliaryChunkNames": [],
-      "auxiliaryChunkIdHints": [],
-      "related": {},
-      "chunks": [],
-      "auxiliaryChunks": [],
-      "isOverSizeLimit": false
     }
   ],
   "chunks": [
@@ -150,11 +101,10 @@
       ],
       "files": [
         "main.css",
-        "bundle-front.js",
-        "179.5c7b097217a303f2cb21.hot-update.js"
+        "bundle-front.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "824808200240f313d260",
+      "hash": "a32ce772995c5b25ae9a",
       "childrenByOrder": {},
       "id": 179,
       "siblings": [],
@@ -14582,14 +14532,10 @@
         {
           "name": "bundle-front.js",
           "size": 245697
-        },
-        {
-          "name": "179.5c7b097217a303f2cb21.hot-update.js",
-          "size": 24404
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 275072,
+      "assetsSize": 250668,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -14612,14 +14558,10 @@
         {
           "name": "bundle-front.js",
           "size": 245697
-        },
-        {
-          "name": "179.5c7b097217a303f2cb21.hot-update.js",
-          "size": 24404
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 275072,
+      "assetsSize": 250668,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -14630,16 +14572,607 @@
   },
   "errors": [],
   "errorsCount": 0,
-  "warnings": [
+  "warnings": [],
+  "warningsCount": 0,
+  "children": [
     {
-      "message": "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  main (269 KiB)\n      main.css\n      bundle-front.js\n      179.5c7b097217a303f2cb21.hot-update.js\n",
-      "stack": "EntrypointsOverSizeLimitWarning: entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  main (269 KiB)\n      main.css\n      bundle-front.js\n      179.5c7b097217a303f2cb21.hot-update.js\n\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/performance/SizeLimitsPlugin.js:139:7\n    at Hook.eval [as callAsync] (eval at create (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/Compiler.js:882:27\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/neo-async/async.js:2818:7\n    at done (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/neo-async/async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/Compiler.js:736:33\n    at Immediate.<anonymous> (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/memfs/lib/volume.js:701:13)\n    at process.processImmediate (node:internal/timers:471:21)"
-    },
-    {
-      "message": "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/",
-      "stack": "NoAsyncChunksWarning: webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/performance/SizeLimitsPlugin.js:153:21\n    at Hook.eval [as callAsync] (eval at create (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/Compiler.js:882:27\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/neo-async/async.js:2818:7\n    at done (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/neo-async/async.js:3522:9)\n    at Hook.eval [as callAsync] (eval at create (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\n    at /Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/webpack/lib/Compiler.js:736:33\n    at Immediate.<anonymous> (/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/memfs/lib/volume.js:701:13)\n    at process.processImmediate (node:internal/timers:471:21)"
+      "name": "HtmlWebpackCompiler",
+      "hash": "86bed1ec50208678b172",
+      "version": "5.74.0",
+      "time": 88,
+      "builtAt": 1667915727799,
+      "publicPath": "",
+      "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
+      "assetsByChunkName": {},
+      "assets": [],
+      "chunks": [
+        {
+          "rendered": true,
+          "initial": true,
+          "entry": true,
+          "recorded": false,
+          "size": 1475,
+          "sizes": {
+            "javascript": 1035,
+            "runtime": 440
+          },
+          "names": [
+            "HtmlWebpackPlugin_0-0"
+          ],
+          "idHints": [],
+          "runtime": [
+            "HtmlWebpackPlugin_0-0"
+          ],
+          "files": [],
+          "auxiliaryFiles": [],
+          "hash": "493480d0ae63b059618d",
+          "childrenByOrder": {},
+          "id": 563,
+          "siblings": [],
+          "parents": [],
+          "children": [],
+          "modules": [
+            {
+              "type": "module",
+              "moduleType": "javascript/auto",
+              "layer": null,
+              "size": 958,
+              "sizes": {
+                "javascript": 958
+              },
+              "built": true,
+              "codeGenerated": true,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+              "name": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+              "nameForCondition": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+              "index": 1,
+              "preOrderIndex": 1,
+              "index2": 1,
+              "postOrderIndex": 1,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": false,
+              "issuer": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": 726,
+              "issuerId": null,
+              "chunks": [
+                563
+              ],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+                  "module": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+                  "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+                  "resolvedModuleIdentifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+                  "resolvedModule": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+                  "type": "cjs self exports reference",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": null,
+                  "loc": "1:111-125",
+                  "moduleId": 726,
+                  "resolvedModuleId": 726
+                },
+                {
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "resolvedModuleIdentifier": null,
+                  "resolvedModule": null,
+                  "type": "entry",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+                  "loc": "HtmlWebpackPlugin_0-0",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                },
+                {
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "resolvedModuleIdentifier": null,
+                  "resolvedModule": null,
+                  "type": null,
+                  "active": true,
+                  "explanation": "used as library export",
+                  "userRequest": null,
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": null,
+              "providedExports": null,
+              "optimizationBailout": [
+                "CommonJS bailout: module.exports is used directly at 1:111-125",
+                "Statement (VariableDeclaration) with side effects in source code at 1:0-111",
+                "ModuleConcatenation bailout: Module is not an ECMAScript module"
+              ],
+              "depth": 0
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 77,
+              "sizes": {
+                "javascript": 77
+              },
+              "built": true,
+              "codeGenerated": true,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+              "name": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+              "nameForCondition": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+              "index": 0,
+              "preOrderIndex": 0,
+              "index2": 0,
+              "postOrderIndex": 0,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": false,
+              "issuer": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": 163,
+              "issuerId": null,
+              "chunks": [
+                563
+              ],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": null,
+                  "module": null,
+                  "moduleName": null,
+                  "resolvedModuleIdentifier": null,
+                  "resolvedModule": null,
+                  "type": "entry",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                  "loc": "HtmlWebpackPlugin_0-0",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ExpressionStatement) with side effects in source code at 1:0-77"
+              ],
+              "depth": 0
+            },
+            {
+              "type": "module",
+              "moduleType": "runtime",
+              "layer": null,
+              "size": 88,
+              "sizes": {
+                "runtime": 88
+              },
+              "built": false,
+              "codeGenerated": true,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "webpack/runtime/hasOwnProperty shorthand",
+              "name": "webpack/runtime/hasOwnProperty shorthand",
+              "nameForCondition": null,
+              "index": null,
+              "preOrderIndex": null,
+              "index2": null,
+              "postOrderIndex": null,
+              "optional": false,
+              "orphan": false,
+              "dependent": false,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": "",
+              "chunks": [
+                563
+              ],
+              "assets": [],
+              "reasons": [],
+              "usedExports": null,
+              "providedExports": [],
+              "optimizationBailout": [],
+              "depth": null
+            },
+            {
+              "type": "module",
+              "moduleType": "runtime",
+              "layer": null,
+              "size": 27,
+              "sizes": {
+                "runtime": 27
+              },
+              "built": false,
+              "codeGenerated": true,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "webpack/runtime/publicPath",
+              "name": "webpack/runtime/publicPath",
+              "nameForCondition": null,
+              "index": null,
+              "preOrderIndex": null,
+              "index2": null,
+              "postOrderIndex": null,
+              "optional": false,
+              "orphan": false,
+              "dependent": false,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": "",
+              "chunks": [
+                563
+              ],
+              "assets": [],
+              "reasons": [],
+              "usedExports": null,
+              "providedExports": [],
+              "optimizationBailout": [],
+              "depth": null
+            },
+            {
+              "type": "module",
+              "moduleType": "runtime",
+              "layer": null,
+              "size": 325,
+              "sizes": {
+                "runtime": 325
+              },
+              "built": false,
+              "codeGenerated": true,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "webpack/runtime/require chunk loading",
+              "name": "webpack/runtime/require chunk loading",
+              "nameForCondition": null,
+              "index": null,
+              "preOrderIndex": null,
+              "index2": null,
+              "postOrderIndex": null,
+              "optional": false,
+              "orphan": false,
+              "dependent": false,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": "",
+              "chunks": [
+                563
+              ],
+              "assets": [],
+              "reasons": [],
+              "usedExports": null,
+              "providedExports": [],
+              "optimizationBailout": [],
+              "depth": null
+            }
+          ],
+          "origins": [
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "HtmlWebpackPlugin_0-0",
+              "request": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html"
+            },
+            {
+              "module": "",
+              "moduleIdentifier": "",
+              "moduleName": "",
+              "loc": "HtmlWebpackPlugin_0-0",
+              "request": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;"
+            }
+          ]
+        }
+      ],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 77,
+          "sizes": {
+            "javascript": 77
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+          "name": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+          "nameForCondition": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": 163,
+          "issuerId": null,
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+              "loc": "HtmlWebpackPlugin_0-0",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ExpressionStatement) with side effects in source code at 1:0-77"
+          ],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/auto",
+          "layer": null,
+          "size": 958,
+          "sizes": {
+            "javascript": 958
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+          "name": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+          "nameForCondition": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+          "index": 1,
+          "preOrderIndex": 1,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": 726,
+          "issuerId": null,
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+              "module": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+              "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+              "resolvedModuleIdentifier": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+              "resolvedModule": "./node_modules/html-webpack-plugin/lib/loader.js!./frontend/public/index.html",
+              "type": "cjs self exports reference",
+              "active": true,
+              "explanation": "",
+              "userRequest": null,
+              "loc": "1:111-125",
+              "moduleId": 726,
+              "resolvedModuleId": 726
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
+              "loc": "HtmlWebpackPlugin_0-0",
+              "moduleId": null,
+              "resolvedModuleId": null
+            },
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": null,
+              "active": true,
+              "explanation": "used as library export",
+              "userRequest": null,
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": null,
+          "providedExports": null,
+          "optimizationBailout": [
+            "CommonJS bailout: module.exports is used directly at 1:111-125",
+            "Statement (VariableDeclaration) with side effects in source code at 1:0-111",
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 88,
+          "sizes": {
+            "runtime": 88
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/hasOwnProperty shorthand",
+          "name": "webpack/runtime/hasOwnProperty shorthand",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 27,
+          "sizes": {
+            "runtime": 27
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/publicPath",
+          "name": "webpack/runtime/publicPath",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        },
+        {
+          "type": "module",
+          "moduleType": "runtime",
+          "layer": null,
+          "size": 325,
+          "sizes": {
+            "runtime": 325
+          },
+          "built": false,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "webpack/runtime/require chunk loading",
+          "name": "webpack/runtime/require chunk loading",
+          "nameForCondition": null,
+          "index": null,
+          "preOrderIndex": null,
+          "index2": null,
+          "postOrderIndex": null,
+          "optional": false,
+          "orphan": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": "",
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "reasons": [],
+          "usedExports": null,
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": null
+        }
+      ],
+      "entrypoints": {
+        "HtmlWebpackPlugin_0-0": {
+          "name": "HtmlWebpackPlugin_0-0",
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "filteredAssets": 0,
+          "assetsSize": 0,
+          "auxiliaryAssets": [],
+          "filteredAuxiliaryAssets": 0,
+          "auxiliaryAssetsSize": 0,
+          "children": {},
+          "childAssets": {},
+          "isOverSizeLimit": false
+        }
+      },
+      "namedChunkGroups": {
+        "HtmlWebpackPlugin_0-0": {
+          "name": "HtmlWebpackPlugin_0-0",
+          "chunks": [
+            563
+          ],
+          "assets": [],
+          "filteredAssets": 0,
+          "assetsSize": 0,
+          "auxiliaryAssets": [],
+          "filteredAuxiliaryAssets": 0,
+          "auxiliaryAssetsSize": 0,
+          "children": {},
+          "childAssets": {},
+          "isOverSizeLimit": false
+        }
+      },
+      "errors": [],
+      "errorsCount": 0,
+      "warnings": [],
+      "warningsCount": 0,
+      "children": []
     }
-  ],
-  "warningsCount": 2,
-  "children": []
+  ]
 }

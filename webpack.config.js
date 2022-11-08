@@ -69,6 +69,9 @@ const frontConfig = {
 		],
 	},
 	// devtool: 'inline-source-map',
+	performance: {
+		hints: false,
+	},
 
 	mode: 'production',
 };
