@@ -10,12 +10,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 //
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin =
-	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const frontConfig = {
 	target: 'web',
-
 	entry: './frontend/src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -33,12 +30,6 @@ const frontConfig = {
 					: false,
 		}),
 		new MiniCssExtractPlugin(),
-		new BundleAnalyzerPlugin({
-			analyzerMode: 'static',
-			openAnalyzer: false,
-			generateStatsFile: true,
-			statsFilename: 'bundle-report.json',
-		}),
 	],
 	module: {
 		rules: [
