@@ -1,14 +1,15 @@
 {
-  "hash": "7c3c34be224d97041773",
+  "hash": "88513da2fd5c1f2e51b0",
   "version": "5.74.0",
-  "time": 970,
-  "builtAt": 1667915832656,
+  "time": 710,
+  "builtAt": 1667918863080,
   "publicPath": "auto",
   "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
   "assetsByChunkName": {
     "main": [
       "main.css",
-      "bundle-front.js"
+      "bundle-front.js",
+      "179.7c3c34be224d97041773.hot-update.js"
     ]
   },
   "assets": [
@@ -78,6 +79,54 @@
       "chunks": [],
       "auxiliaryChunks": [],
       "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "179.7c3c34be224d97041773.hot-update.js",
+      "size": 646,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "7c3c34be224d97041773",
+        "size": 646
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [
+        179
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "main.7c3c34be224d97041773.hot-update.json",
+      "size": 25,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true,
+        "fullhash": "7c3c34be224d97041773",
+        "size": 25
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": {},
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
     }
   ],
   "chunks": [
@@ -101,10 +150,11 @@
       ],
       "files": [
         "main.css",
-        "bundle-front.js"
+        "bundle-front.js",
+        "179.7c3c34be224d97041773.hot-update.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "7aeacd2b77205e1adf07",
+      "hash": "972269e1d41e36729e0e",
       "childrenByOrder": {},
       "id": 179,
       "siblings": [],
@@ -14532,10 +14582,14 @@
         {
           "name": "bundle-front.js",
           "size": 245697
+        },
+        {
+          "name": "179.7c3c34be224d97041773.hot-update.js",
+          "size": 646
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 250668,
+      "assetsSize": 251314,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -14558,10 +14612,14 @@
         {
           "name": "bundle-front.js",
           "size": 245697
+        },
+        {
+          "name": "179.7c3c34be224d97041773.hot-update.js",
+          "size": 646
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 250668,
+      "assetsSize": 251314,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -14577,10 +14635,10 @@
   "children": [
     {
       "name": "HtmlWebpackCompiler",
-      "hash": "86bed1ec50208678b172",
+      "hash": "694f67a5cbed87b97916",
       "version": "5.74.0",
-      "time": 81,
-      "builtAt": 1667915831800,
+      "time": 37,
+      "builtAt": 1667918862412,
       "publicPath": "",
       "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
       "assetsByChunkName": {},
@@ -14597,17 +14655,17 @@
             "runtime": 440
           },
           "names": [
-            "HtmlWebpackPlugin_0-0"
+            "HtmlWebpackPlugin_0-1"
           ],
           "idHints": [],
           "runtime": [
-            "HtmlWebpackPlugin_0-0"
+            "HtmlWebpackPlugin_0-1"
           ],
           "files": [],
           "auxiliaryFiles": [],
-          "hash": "493480d0ae63b059618d",
+          "hash": "eebf2da0614fa181b0e1",
           "childrenByOrder": {},
-          "id": 563,
+          "id": 443,
           "siblings": [],
           "parents": [],
           "children": [],
@@ -14644,7 +14702,7 @@
               "id": 726,
               "issuerId": null,
               "chunks": [
-                563
+                443
               ],
               "assets": [],
               "reasons": [
@@ -14672,7 +14730,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
-                  "loc": "HtmlWebpackPlugin_0-0",
+                  "loc": "HtmlWebpackPlugin_0-1",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -14731,7 +14789,7 @@
               "id": 163,
               "issuerId": null,
               "chunks": [
-                563
+                443
               ],
               "assets": [],
               "reasons": [
@@ -14745,7 +14803,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
-                  "loc": "HtmlWebpackPlugin_0-0",
+                  "loc": "HtmlWebpackPlugin_0-1",
                   "moduleId": null,
                   "resolvedModuleId": null
                 }
@@ -14784,7 +14842,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                563
+                443
               ],
               "assets": [],
               "reasons": [],
@@ -14820,7 +14878,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                563
+                443
               ],
               "assets": [],
               "reasons": [],
@@ -14856,7 +14914,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                563
+                443
               ],
               "assets": [],
               "reasons": [],
@@ -14871,14 +14929,14 @@
               "module": "",
               "moduleIdentifier": "",
               "moduleName": "",
-              "loc": "HtmlWebpackPlugin_0-0",
+              "loc": "HtmlWebpackPlugin_0-1",
               "request": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html"
             },
             {
               "module": "",
               "moduleIdentifier": "",
               "moduleName": "",
-              "loc": "HtmlWebpackPlugin_0-0",
+              "loc": "HtmlWebpackPlugin_0-1",
               "request": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;"
             }
           ]
@@ -14916,7 +14974,7 @@
           "id": 163,
           "issuerId": null,
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "reasons": [
@@ -14930,7 +14988,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
-              "loc": "HtmlWebpackPlugin_0-0",
+              "loc": "HtmlWebpackPlugin_0-1",
               "moduleId": null,
               "resolvedModuleId": null
             }
@@ -14973,7 +15031,7 @@
           "id": 726,
           "issuerId": null,
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "reasons": [
@@ -15001,7 +15059,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
-              "loc": "HtmlWebpackPlugin_0-0",
+              "loc": "HtmlWebpackPlugin_0-1",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -15054,7 +15112,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "reasons": [],
@@ -15089,7 +15147,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "reasons": [],
@@ -15124,7 +15182,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "reasons": [],
@@ -15135,10 +15193,10 @@
         }
       ],
       "entrypoints": {
-        "HtmlWebpackPlugin_0-0": {
-          "name": "HtmlWebpackPlugin_0-0",
+        "HtmlWebpackPlugin_0-1": {
+          "name": "HtmlWebpackPlugin_0-1",
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "filteredAssets": 0,
@@ -15152,10 +15210,10 @@
         }
       },
       "namedChunkGroups": {
-        "HtmlWebpackPlugin_0-0": {
-          "name": "HtmlWebpackPlugin_0-0",
+        "HtmlWebpackPlugin_0-1": {
+          "name": "HtmlWebpackPlugin_0-1",
           "chunks": [
-            563
+            443
           ],
           "assets": [],
           "filteredAssets": 0,
