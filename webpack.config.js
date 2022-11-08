@@ -19,7 +19,6 @@ const frontConfig = {
 		static: path.join(__dirname, './frontend/public'),
 		proxy: {
 			'/': 'http://localhost:8000',
-			'/about': 'http://localhost:8000/about',
 		},
 		port: 8080,
 		historyApiFallback: true,

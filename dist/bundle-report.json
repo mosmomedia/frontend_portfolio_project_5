@@ -1,8 +1,8 @@
 {
-  "hash": "9c2c974d169ba270be80",
+  "hash": "7c3c34be224d97041773",
   "version": "5.74.0",
-  "time": 1021,
-  "builtAt": 1667915728686,
+  "time": 970,
+  "builtAt": 1667915832656,
   "publicPath": "auto",
   "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
   "assetsByChunkName": {
@@ -104,7 +104,7 @@
         "bundle-front.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "a32ce772995c5b25ae9a",
+      "hash": "7aeacd2b77205e1adf07",
       "childrenByOrder": {},
       "id": 179,
       "siblings": [],
@@ -14579,8 +14579,8 @@
       "name": "HtmlWebpackCompiler",
       "hash": "86bed1ec50208678b172",
       "version": "5.74.0",
-      "time": 88,
-      "builtAt": 1667915727799,
+      "time": 81,
+      "builtAt": 1667915831800,
       "publicPath": "",
       "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
       "assetsByChunkName": {},
