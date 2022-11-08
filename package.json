@@ -11,7 +11,7 @@
 		"codev": "concurrently \"npm run dev\" \"npm run serve\"",
 		"build": "webpack -w",
 		"analyze": "webpack-bundle-analyzer ./dist/bundle-report.json --default-sizes gzip",
-		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack"
+		"heroku-prebuild": "NPM_CONFIG_PRODUCTION=false webpack -w"
 	},
 	"author": "",
 	"license": "ISC",
