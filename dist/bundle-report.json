@@ -1,15 +1,15 @@
 {
-  "hash": "3d9084029f97db0eeb4b",
+  "hash": "b3d2980c775d306c7aed",
   "version": "5.74.0",
-  "time": 618,
-  "builtAt": 1667919278003,
+  "time": 743,
+  "builtAt": 1667919325642,
   "publicPath": "auto",
   "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
   "assetsByChunkName": {
     "main": [
       "main.css",
       "bundle-front.js",
-      "179.662bce5ff74d3dd93488.hot-update.js"
+      "179.3d9084029f97db0eeb4b.hot-update.js"
     ]
   },
   "assets": [
@@ -82,7 +82,7 @@
     },
     {
       "type": "asset",
-      "name": "179.662bce5ff74d3dd93488.hot-update.js",
+      "name": "179.3d9084029f97db0eeb4b.hot-update.js",
       "size": 646,
       "emitted": true,
       "comparedForEmit": false,
@@ -90,7 +90,7 @@
       "info": {
         "hotModuleReplacement": true,
         "immutable": true,
-        "fullhash": "662bce5ff74d3dd93488",
+        "fullhash": "3d9084029f97db0eeb4b",
         "size": 646
       },
       "chunkNames": [
@@ -108,7 +108,7 @@
     },
     {
       "type": "asset",
-      "name": "main.662bce5ff74d3dd93488.hot-update.json",
+      "name": "main.3d9084029f97db0eeb4b.hot-update.json",
       "size": 25,
       "emitted": true,
       "comparedForEmit": false,
@@ -116,7 +116,7 @@
       "info": {
         "hotModuleReplacement": true,
         "immutable": true,
-        "fullhash": "662bce5ff74d3dd93488",
+        "fullhash": "3d9084029f97db0eeb4b",
         "size": 25
       },
       "chunkNames": [],
@@ -151,10 +151,10 @@
       "files": [
         "main.css",
         "bundle-front.js",
-        "179.662bce5ff74d3dd93488.hot-update.js"
+        "179.3d9084029f97db0eeb4b.hot-update.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "a92ab18903947dcb105e",
+      "hash": "a1e51d643f0904e73108",
       "childrenByOrder": {},
       "id": 179,
       "siblings": [],
@@ -14584,7 +14584,7 @@
           "size": 245697
         },
         {
-          "name": "179.662bce5ff74d3dd93488.hot-update.js",
+          "name": "179.3d9084029f97db0eeb4b.hot-update.js",
           "size": 646
         }
       ],
@@ -14614,7 +14614,7 @@
           "size": 245697
         },
         {
-          "name": "179.662bce5ff74d3dd93488.hot-update.js",
+          "name": "179.3d9084029f97db0eeb4b.hot-update.js",
           "size": 646
         }
       ],
@@ -14635,10 +14635,10 @@
   "children": [
     {
       "name": "HtmlWebpackCompiler",
-      "hash": "1c5b27f6007d5b5550ca",
+      "hash": "42b3d39651469c3d4ec4",
       "version": "5.74.0",
-      "time": 31,
-      "builtAt": 1667919277425,
+      "time": 48,
+      "builtAt": 1667919324954,
       "publicPath": "",
       "outputPath": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/dist",
       "assetsByChunkName": {},
@@ -14655,17 +14655,17 @@
             "runtime": 440
           },
           "names": [
-            "HtmlWebpackPlugin_0-3"
+            "HtmlWebpackPlugin_0-4"
           ],
           "idHints": [],
           "runtime": [
-            "HtmlWebpackPlugin_0-3"
+            "HtmlWebpackPlugin_0-4"
           ],
           "files": [],
           "auxiliaryFiles": [],
-          "hash": "52fe9f62236ca425c381",
+          "hash": "c9960c63e75ab65b81a8",
           "childrenByOrder": {},
-          "id": 724,
+          "id": 549,
           "siblings": [],
           "parents": [],
           "children": [],
@@ -14702,7 +14702,7 @@
               "id": 726,
               "issuerId": null,
               "chunks": [
-                724
+                549
               ],
               "assets": [],
               "reasons": [
@@ -14730,7 +14730,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
-                  "loc": "HtmlWebpackPlugin_0-3",
+                  "loc": "HtmlWebpackPlugin_0-4",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -14789,7 +14789,7 @@
               "id": 163,
               "issuerId": null,
               "chunks": [
-                724
+                549
               ],
               "assets": [],
               "reasons": [
@@ -14803,7 +14803,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
-                  "loc": "HtmlWebpackPlugin_0-3",
+                  "loc": "HtmlWebpackPlugin_0-4",
                   "moduleId": null,
                   "resolvedModuleId": null
                 }
@@ -14842,7 +14842,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                724
+                549
               ],
               "assets": [],
               "reasons": [],
@@ -14878,7 +14878,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                724
+                549
               ],
               "assets": [],
               "reasons": [],
@@ -14914,7 +14914,7 @@
               "warnings": 0,
               "id": "",
               "chunks": [
-                724
+                549
               ],
               "assets": [],
               "reasons": [],
@@ -14929,14 +14929,14 @@
               "module": "",
               "moduleIdentifier": "",
               "moduleName": "",
-              "loc": "HtmlWebpackPlugin_0-3",
+              "loc": "HtmlWebpackPlugin_0-4",
               "request": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html"
             },
             {
               "module": "",
               "moduleIdentifier": "",
               "moduleName": "",
-              "loc": "HtmlWebpackPlugin_0-3",
+              "loc": "HtmlWebpackPlugin_0-4",
               "request": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;"
             }
           ]
@@ -14974,7 +14974,7 @@
           "id": 163,
           "issuerId": null,
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "reasons": [
@@ -14988,7 +14988,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
-              "loc": "HtmlWebpackPlugin_0-3",
+              "loc": "HtmlWebpackPlugin_0-4",
               "moduleId": null,
               "resolvedModuleId": null
             }
@@ -15031,7 +15031,7 @@
           "id": 726,
           "issuerId": null,
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "reasons": [
@@ -15059,7 +15059,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "/Users/dongjookim/Projects/_PF/7_portfolio_v2/node_modules/html-webpack-plugin/lib/loader.js!/Users/dongjookim/Projects/_PF/7_portfolio_v2/frontend/public/index.html",
-              "loc": "HtmlWebpackPlugin_0-3",
+              "loc": "HtmlWebpackPlugin_0-4",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -15112,7 +15112,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "reasons": [],
@@ -15147,7 +15147,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "reasons": [],
@@ -15182,7 +15182,7 @@
           "warnings": 0,
           "id": "",
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "reasons": [],
@@ -15193,10 +15193,10 @@
         }
       ],
       "entrypoints": {
-        "HtmlWebpackPlugin_0-3": {
-          "name": "HtmlWebpackPlugin_0-3",
+        "HtmlWebpackPlugin_0-4": {
+          "name": "HtmlWebpackPlugin_0-4",
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "filteredAssets": 0,
@@ -15210,10 +15210,10 @@
         }
       },
       "namedChunkGroups": {
-        "HtmlWebpackPlugin_0-3": {
-          "name": "HtmlWebpackPlugin_0-3",
+        "HtmlWebpackPlugin_0-4": {
+          "name": "HtmlWebpackPlugin_0-4",
           "chunks": [
-            724
+            549
           ],
           "assets": [],
           "filteredAssets": 0,
