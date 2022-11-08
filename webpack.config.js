@@ -10,9 +10,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 //
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin =
+	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const frontConfig = {
 	target: 'web',
+	devServer: {
+		static: path.join(__dirname, './frontend/public'),
+		proxy: {
+			'/': 'http://localhost:8000',
+			'/about': 'http://localhost:8000/about',
+		},
+		port: 8080,
+		historyApiFallback: true,
+	},
 	entry: './frontend/src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -21,8 +32,21 @@ const frontConfig = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'frontend/public', 'index.html'),
+			minify:
+				process.env.NODE_ENV === 'production'
+					? {
+							collapseWhitespace: true, // 빈칸 제거
+							removeComments: true, // 주석 제거
+					  }
+					: false,
 		}),
 		new MiniCssExtractPlugin(),
+		new BundleAnalyzerPlugin({
+			analyzerMode: 'static',
+			openAnalyzer: false,
+			generateStatsFile: true,
+			statsFilename: 'bundle-report.json',
+		}),
 	],
 	module: {
 		rules: [
@@ -44,8 +68,8 @@ const frontConfig = {
 			}),
 		],
 	},
-	devServer: {},
-	devtool: 'inline-source-map',
+	// devtool: 'inline-source-map',
+
 	mode: 'production',
 };
 
