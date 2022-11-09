@@ -13,6 +13,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const frontConfig = {
 	target: 'web',
+	devServer: {
+		static: path.join(__dirname, './frontend/public'),
+		proxy: {
+			'/': 'http://localhost:8000',
+		},
+		port: 8080,
+		historyApiFallback: true,
+	},
 	entry: './frontend/src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),

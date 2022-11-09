@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --progress",
+		"start": "node backend/server.js",
 		"serve": "webpack serve",
 		"wdev": "node dist/bundle-back.js",
 		"dev": "node backend/server.js",
