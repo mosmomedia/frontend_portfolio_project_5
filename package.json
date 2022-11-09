@@ -10,7 +10,6 @@
 	"scripts": {
 		"start": "node backend/server.js",
 		"serve": "webpack serve",
-		"wdev": "node dist/bundle-back.js",
 		"dev": "node backend/server.js",
 		"codev": "concurrently \"npm run dev\" \"npm run serve\"",
 		"build": "NODE_ENV=production webpack -w",
