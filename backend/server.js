@@ -21,7 +21,8 @@ app.use('/api/auth', require('./routes/authRoutes.js'));
 if (process.env.NODE_ENV === 'production') {
 	// production
 	// app.use('/', express.static(path.join(__dirname)));
-	app.use(express.static('../dist'));
+	// app.use(express.static('../dist'));
+	app.use('/', express.static(path.join(__dirname, '../dist')));
 	app.get('*', (_, res) => {
 		// res.sendFile(__dirname + '/index.html');
 		res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
