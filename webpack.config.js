@@ -28,7 +28,7 @@ const frontConfig = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, 'frontend/public', 'index.html'),
+			template: path.resolve(__dirname, './frontend/public', 'index.html'),
 			minify:
 				process.env.NODE_ENV === 'production'
 					? {
